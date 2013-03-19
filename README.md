@@ -4,12 +4,12 @@ ShopRight is a website developed using PHP. This website is a fictional website 
 You can check out the actual website here, [http://shopright.eu.pn](http://shopright.eu.pn)
 
 ## Authors
+**Acer Alhashimi**
+
 **Phong Huynh**
 
 + [Website](http://phonghuynh.ca)
 + [GitHub](http://github.com/xphong)
-
-**Acer Alhashimi**
 
 **Simran Kaur**
 

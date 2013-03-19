@@ -20,7 +20,7 @@ html {
 img {
     max-width: 100%;
     height: auto;
-    width: auto; /* ie8 */
+     width: auto; /* ie8 */
 }
 .menu {
 }
@@ -69,12 +69,13 @@ img {
     #single-content {
         width: 95%;
     }
-        
+    
+
     #slider {
         height: 95%;
         width: 95%;
     }
-    
+
 }
 /* Landscape */
 @media only screen and (max-width: 767px) {
@@ -84,7 +85,7 @@ img {
     .minimenu {
         display: block;
     }
-    header, #content, footer, nav, #main-content, #single-content, #sidebar, #footernav {
+    header, #content, footer, nav, #main-content, #sidebar, #footernav {
         width: 100%;
         margin: 0px;
         padding: 0px;
@@ -103,17 +104,20 @@ img {
         top: 5px;
         left: 5px;
     }
-    
+
     #content{
         margin-left: 10px;
     }
-    
+
     #slider {
         height: 85%;
         width: 85%;
     }
-    
-    
+
+    #single-content {
+        width:95%;
+    }
+   
 
 }
 /* Mobile */
@@ -134,14 +138,16 @@ img {
     #content img {
         width: 50%;
     }
-    nav {
-        height:100%;
-    }
+
     #footernav{
         height:100%;
     }
     #content {
         margin-right: 15px;
+    }
+    
+    #single-content {
+        width:95%;
     }
 
 }

@@ -1,4 +1,3 @@
-<?php include('variables/variables.php'); ?>
 <!--------------Footer--------------->
 <div id="footer-wrapper">
     <footer>
@@ -12,7 +11,7 @@
             <div class="minimenu">
                 <div>FOOTER MENU</div>
                 <select onchange="location=this.value">
-                    <option value="giftcards.php">Gift Cards</option>
+                    <option value="gift-cards.php">Gift Cards</option>
                     <option value="coupons.php">Coupons</option>
                     <option value="careers.php">Careers</option>
                 </select>
@@ -22,11 +21,12 @@
         <div class="clear"></div>
         <!-- /clear -->
         <div id="copyright">
-            <p><?php echo $footer ?></p>
+            <p>Copyright &copy; 2013 - ShopRight, All Rights Reserved</p>
         </div>
         <!-- /copyright -->
         <div id="privacy"> <a href="privacy.php" title="Privacy">Privacy</a> - <a href="terms.php" title="Terms of Use">Terms of Use</a> </div>
         <!-- /privacy --> 
     </footer>
 </div>
-<!--------------/Footer--------------->
+</body>
+</html>

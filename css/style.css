@@ -77,7 +77,9 @@ input, textarea, select {
     margin: 0;
     padding: 0px;
 }
+
 /* Style */
+
 html, body {
     background: #FFFFFF;
     width: 100%;
@@ -105,7 +107,7 @@ a:hover {
     color: #7BBA55;
     text-decoration: none;
 }
-a.button, input.button, input[type=submit] {
+a.button, input[type=button], input[type=submit] {
     cursor: pointer;
     color: #ffffff;
     line-height: 14px;
@@ -122,13 +124,13 @@ a.button {
     text-decoration: none;
     padding: 6px 12px 6px 12px;
 }
-input.button, input[type=submit] {
+input[type=button], input[type=submit] {
     margin: 0;
     border: 0;
     height: 24px;
     padding: 0px 12px 0px 12px;
 }
-a.button:hover, input.button:hover, input[type=submit]:hover {
+a.button:hover, input[type=button]:hover, input[type=submit]:hover {
     color: #CCCCCC;
     text-decoration: none;
 }
@@ -302,7 +304,6 @@ nav ul li:hover a {
 
 #gift-cards {
     width: 400px;
-
 }
 #gift-cards input, textarea, select {
     width: 100%;
@@ -412,4 +413,22 @@ footer {
 }
 #privacy a {
     text-decoration: underline;
+}
+.errorbox { 
+    padding:2px 4px;
+    margin:0px;
+    border:solid 1px #FBD3C6;
+    background:#FDE4E1;
+    color:#CB4721;
+    font-weight:bold;
+    text-align:center;
+}
+.successbox {
+    padding:2px 4px;
+    margin:0px;
+    border:solid 1px #C0F0B9;
+    background:#D5FFC6;
+    color:#48A41C; 
+    font-weight:bold;
+    text-align:center;
 }

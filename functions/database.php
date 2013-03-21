@@ -6,7 +6,6 @@ class Database {
     private static $username = 'root';
     private static $password = '';
     private static $db;
-    
 
     private function __construct() {}
     

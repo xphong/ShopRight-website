@@ -69,7 +69,6 @@ img {
     #single-content {
         width: 95%;
     }
-    
 
     #slider {
         height: 95%;
@@ -106,6 +105,7 @@ img {
     }
 
     #content{
+        margin-top: 20px;
         margin-left: 10px;
     }
 
@@ -136,18 +136,21 @@ img {
         left: 15%;
     }
     #content img {
-        width: 50%;
+        width: 20%;
     }
-
     #footernav{
         height:100%;
     }
     #content {
+        margin-top: 20px;
         margin-right: 15px;
     }
-    
     #single-content {
         width:95%;
+    }
+    /* need to fix*/
+    #gift-cards input, textarea, select{
+        width:90%;
     }
 
 }

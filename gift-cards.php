@@ -8,7 +8,7 @@ $title = "ShopRight - Gift Cards";
 // track user session
 $user = "guest";
 
-ob_start();
+ob_start(); //output buffer
 
 include('includes/header.php');
 include('includes/nav.php');

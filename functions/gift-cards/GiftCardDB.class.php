@@ -6,7 +6,7 @@ class GiftCardDB {
     // Get list of all gift cards
     public static function getGiftCards() {
         $db = Database::getDB();
-        $query = 'SELECT * FROM giftcards';
+        $query = "SELECT * FROM giftcards";
         $result = $db->query($query);
         $giftcards = array();
         foreach ($result as $row) {
@@ -22,6 +22,24 @@ class GiftCardDB {
             $giftcards[] = $giftcard;
         }
         return $giftcards;
+    }
+    
+    // Get gift card by ID
+    public static function getGiftCardByID($giftcard_id) {
+        $db = Database::getDB();
+        $query = "SELECT * FROM giftcards WHERE ID = '$giftcard_id'";
+        $result = $db->query($query);
+        $row = $result->fetch();
+        $giftcard = new GiftCard($row['name'],
+                        $row['email'],
+                        $row['recipient_name'],
+                        $row['address'],
+                        $row['postalcode'],
+                        $row['phone'],
+                        $row['message'],
+                        $row['amount']);
+        $giftcard->setId($row['id']);
+        return $giftcard;
     }
 
     // Insert gift card into the database table

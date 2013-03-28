@@ -55,7 +55,7 @@
                 echo "$err<br />";
             }
             echo "</div><br />";
-            // if there are no validatione errors, insert into table
+            // if there are no validation errors, insert into table
             if (empty($errors)) {
              
                 $giftcard = new GiftCard($name, $email, $rname, $address, $postalcode, $phonenumber, $message, $amount);

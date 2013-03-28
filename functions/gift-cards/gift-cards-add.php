@@ -23,6 +23,6 @@
             <option value="50">$50</option>
             <option value="100">$100</option>
         </select>
-        <input type="submit" value="Submit" />
+        <input type="submit" value="Add" />
     </form><!-- /form -->
 </div>

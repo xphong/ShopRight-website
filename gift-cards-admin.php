@@ -1,7 +1,7 @@
 <?php
 require('functions/database.php');
-require('functions/gift-cards/GiftCard.php');
-require('functions/gift-cards/GiftCard_DB.php');
+require('functions/gift-cards/GiftCard.class.php');
+require('functions/gift-cards/GiftCardDB.class.php');
 
 // page title
 $title = "ShopRight Admin - Gift Cards";

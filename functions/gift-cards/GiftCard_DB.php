@@ -47,6 +47,37 @@ class GiftCardDB {
         $row_count = $db->exec($query);
     }
 
+    // Delete Gift Card
+    public static function deleteGiftCard($giftcard_id) {
+        $db = Database::getDB();
+        $query = "DELETE FROM giftcards
+                  WHERE id = '$giftcard_id'";
+        $row_count = $db->exec($query);
+        return $row_count;
+    }
+
+    // Update gift card 
+    public static function updateGiftCard($giftcard, $giftcard_id) {
+        // get database connection using database class
+        $db = Database::getDB();
+
+        $name = $giftcard->getName();
+        $email = $giftcard->getEmail();
+        $rname = $giftcard->getRname();
+        $address = $giftcard->getAddress();
+        $postalcode = $giftcard->getPostalcode();
+        $phonenumber = $giftcard->getPhone();
+        $message = $giftcard->getMessage();
+        $amount = $giftcard->getAmount();
+
+        $query =
+                "UPDATE giftcards
+                 SET name = '$name', email = '$email', recipient_name = '$rname', address = '$address', postalcode = '$postalcode', phone = '$phonenumber', message = '$message', amount = '$amount'
+                 WHERE id = '$giftcard_id'";
+
+        $row_count = $db->exec($query);
+    }
+
 }
 
 ?>

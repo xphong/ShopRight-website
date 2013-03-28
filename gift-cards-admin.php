@@ -25,14 +25,26 @@ if (isset($_POST['action'])) {
 
 <section id="content">
     <div id="single-content">
-<?php
-if ($action == 'list_giftcards') {
-    $giftcards = GiftCardDB::getGiftCards();
+        <?php
+        if ($action == 'list_giftcards') {
+            $giftcards = GiftCardDB::getGiftCards();
 
-    // Display the gift cards list
-    include('functions/gift-cards/gift-cards-list.php');
-}
-?>
+            // Display the gift cards list
+            include('functions/gift-cards/gift-cards-list.php');
+        } 
+        // if user clicks on delete
+        else if ($action == 'delete_giftcard') {
+            // Get the gift card ID
+            $giftcard_id = $_POST['giftcard_id'];
+
+            // Delete the gift card
+            GiftCardDB::deleteGiftCard($giftcard_id);
+            
+            header("Location: gift-cards.admin.php");
+        } else {
+             header("Location: gift-cards.admin.php");
+        }
+        ?>
     </div>
     <!-- /single-content -->
 

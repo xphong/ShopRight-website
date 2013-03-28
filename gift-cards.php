@@ -1,7 +1,8 @@
 <?php
-require('functions/Database.php');
-require('functions/gift-cards/GiftCard.class.php');
-require('functions/gift-cards/GiftCardDB.class.php');
+require('classes/database.class.php');
+require('classes/giftcard.class.php');
+require('classes/giftcard_db.class.php');
+
 // page title
 $title = "ShopRight - Gift Cards";
 
@@ -20,9 +21,9 @@ include('includes/nav.php');
 
         <?php
         if ($user == "guest") {
-            include('functions/gift-cards/gift-cards-guestform.php');
+            include('includes/gift-cards/gift-cards-guestform.php');
         } else {
-            include('functions/gift-cards/gift-cards-userform.php');
+            include('includes/gift-cards/gift-cards-userform.php');
         }
         ob_end_flush();
         ?>

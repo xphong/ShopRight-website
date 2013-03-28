@@ -1,7 +1,7 @@
 <?php
-require('functions/database.php');
-require('functions/gift-cards/GiftCard.class.php');
-require('functions/gift-cards/GiftCardDB.class.php');
+require('classes/database.class.php');
+require('classes/giftcard.class.php');
+require('classes/giftcard_db.class.php');
 
 // page title
 $title = "ShopRight Admin - Gift Cards";
@@ -34,7 +34,7 @@ if (isset($_POST['action'])) {
             $giftcards = GiftCardDB::getGiftCards();
 
             // Display the gift cards list
-            include('functions/gift-cards/gift-cards-list.php');
+            include('includes/gift-cards/gift-cards-list.php');
         }
         // Delete button: deletes selected row
         else if ($action == 'delete_giftcard') {
@@ -53,7 +53,7 @@ if (isset($_POST['action'])) {
 
             // gets gift card info
             $giftcard = GiftCardDB::getGiftCardByID($giftcard_id);
-            include('functions/gift-cards/gift-cards-update.php');
+            include('includes/gift-cards/gift-cards-update.php');
         } else if ($action == 'update_giftcard') {
             // Get the gift card ID
             $giftcard_id = $_POST['giftcard_id'];
@@ -123,7 +123,7 @@ if (isset($_POST['action'])) {
         }
         // Add button: shows add form
         else if ($action == 'show_add_form') {
-            include('functions/gift-cards/gift-cards-add.php');
+            include('includes/gift-cards/gift-cards-add.php');
         }
         // Add function: checks for validation and inserts into database
         else if ($action == 'add_giftcard') {

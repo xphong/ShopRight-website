@@ -16,7 +16,7 @@ include('includes/nav.php');
         <br />
         <?php
         if ($user == "guest") {
-            include('includes/guest-register.php');
+            include('functions/gift-cards/guest-register.php');
         }
         ?>
 

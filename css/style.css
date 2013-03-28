@@ -45,9 +45,9 @@ ol, ul {
 blockquote, q {
     quotes: none;
 }
-table, table td {
-    padding: 0;
-    border: none;
+table, table td, table th {
+    padding: 5px;
+    border: 1px solid;
     border-collapse: collapse;
 }
 img {

@@ -1,12 +1,14 @@
 <?php
 require('functions/Database.php');
-require('functions/GiftCard.php');
-require('functions/GiftCard_DB.php');
+require('functions/gift-cards/GiftCard.php');
+require('functions/gift-cards/GiftCard_DB.php');
 // page title
 $title = "ShopRight - Gift Cards";
 
 // track user session
 $user = "guest";
+
+ob_start();
 
 include('includes/header.php');
 include('includes/nav.php');
@@ -18,10 +20,11 @@ include('includes/nav.php');
 
         <?php
         if ($user == "guest") {
-            include('includes/gift-cards-guestform.php');
+            include('functions/gift-cards/gift-cards-guestform.php');
         } else {
-            include('includes/gift-cards-userform.php');
+            include('functions/gift-cards/gift-cards-userform.php');
         }
+        ob_end_flush();
         ?>
 
     </div>

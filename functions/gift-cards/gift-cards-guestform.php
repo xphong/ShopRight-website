@@ -1,8 +1,10 @@
 <!---------------Gift Cards Guest form--------------->
+
 <input type="button" onclick="window.location.href='login.php'" value="Log In" /> for a shorter form
 <h2>Gift Cards - Guest Form </h2>
 <div id="gift-cards">
     <?php
+    ob_start();
     if ($_POST) {
         // retrieve from form
         $name = $_POST["name"];
@@ -55,11 +57,13 @@
             echo "</div><br />";
             // if there are no validatione errors, insert into table
             if (empty($errors)) {
+             
                 $giftcard = new GiftCard($name, $email, $rname, $address, $postalcode, $phonenumber, $message, $amount);
                 GiftCardDB::addGiftCard($giftcard);
                 // email function here
-
+                
                 header("Location: gift-cards-confirmation.php");
+
             }
         } else {
             echo "<div class=\"errorbox\">Please fill in all fields.</div><br />";

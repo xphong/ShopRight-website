@@ -2,7 +2,7 @@
 
 // Gift Card Class: used to create gift card objects
 class GiftCard {
-    private $name, $email, $rname, $address, $postalcode, $phonenumber, $message, $amount;
+    private $id, $name, $email, $rname, $address, $postalcode, $phonenumber, $message, $amount;
     
     public function __construct($name, $email, $rname, $address, $postalcode, $phonenumber, $message, $amount){
         $this->name = $name;
@@ -13,6 +13,14 @@ class GiftCard {
         $this->phonenumber = $phonenumber;
         $this->message = $message;
         $this->amount = $amount;
+    }
+    
+    public function getID() {
+        return $this->id;
+    }
+
+    public function setID($value) {
+        $this->id = $value;
     }
     
     public function getName() {

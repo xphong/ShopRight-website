@@ -22,6 +22,7 @@ if (isset($_POST['action'])) {
 } else {
     $action = 'list_giftcards';
 }
+
 ?>
 
 <section id="content">
@@ -187,15 +188,14 @@ if (isset($_POST['action'])) {
                     $giftcard = new GiftCard($name, $email, $rname, $address, $postalcode, $phonenumber, $message, $amount);
                     GiftCardDB::addGiftCard($giftcard);
 
-                    // set output message - DOES NOT WORK
+                    // set output message - DOES NOT WORK!!
                     $outputmessage = "<div class='successbox'>Gift Card Added</div>";
                     echo $outputmessage;
                     header("Location: gift-cards-admin.php");
                 }
             } else {
                 echo "<div class=\"errorbox\">Please fill in all fields.</div><br />
-                    <input type='button' onclick='history.go(-1);' value='Back to form' />
-                        ";
+                    <input type='button' onclick='history.go(-1);' value='Back to form' />";
             }
         }
 

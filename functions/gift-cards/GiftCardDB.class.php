@@ -86,6 +86,8 @@ class GiftCardDB {
         } else {
             echo "Database Error: could not prepare SQL statement.";
         }
+   
+        
     }
 
     // Update gift card 

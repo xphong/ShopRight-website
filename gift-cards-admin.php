@@ -15,6 +15,7 @@ include('includes/header.php');
 include('includes/nav.php');
 
 
+
 if (isset($_POST['action'])) {
     $action = $_POST['action'];
 } else if (isset($_GET['action'])) {
@@ -42,12 +43,8 @@ if (isset($_POST['action'])) {
 
             // Delete the gift card
             GiftCardDB::deleteGiftCard($giftcard_id);
-
-            // set output message - DOES NOT WORK
-            $outputmessage = "<div class='successbox'>Gift Card Deleted</div>";
-            echo $outputmessage;
-
-            header("Location: gift-cards-admin.php");
+            
+            header("Location: gift-cards-admin.php?msg=Deleted");
         }
         // Update button: shows update form
         else if ($action == 'show_update_form') {
@@ -116,10 +113,7 @@ if (isset($_POST['action'])) {
                     $giftcard = new GiftCard($name, $email, $rname, $address, $postalcode, $phonenumber, $message, $amount);
                     GiftCardDB::updateGiftCard($giftcard, $giftcard_id);
 
-                    // set output message - DOES NOT WORK
-                    $outputmessage = "<div class='successbox'>Gift Card Added</div>";
-                    echo $outputmessage;
-                    header("Location: gift-cards-admin.php");
+                    header("Location: gift-cards-admin.php?msg=Updated");
                 }
             } else {
                 echo "<div class=\"errorbox\">Please fill in all fields.</div><br />
@@ -188,10 +182,7 @@ if (isset($_POST['action'])) {
                     $giftcard = new GiftCard($name, $email, $rname, $address, $postalcode, $phonenumber, $message, $amount);
                     GiftCardDB::addGiftCard($giftcard);
 
-                    // set output message - DOES NOT WORK!!
-                    $outputmessage = "<div class='successbox'>Gift Card Added</div>";
-                    echo $outputmessage;
-                    header("Location: gift-cards-admin.php");
+                    header("Location: gift-cards-admin.php?msg=Added");
                 }
             } else {
                 echo "<div class=\"errorbox\">Please fill in all fields.</div><br />

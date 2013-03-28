@@ -3,7 +3,16 @@
 <br />
 <p><a href="?action=show_add_form">Add Gift Card</a></p>
 <br />
+<?php
+if (isset($_GET['msg'])){
+    $message = $_GET['msg'];
+    // set output message 
+            $outputmessage = "<div class='successbox'>Gift Card $message</div>";
+            echo $outputmessage;
+}
+?>
 <table>
+    
     <tr>
         <th>ID</th>
         <th>Name</th>

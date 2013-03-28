@@ -1,5 +1,11 @@
 <!---------------Gift Cards List--------------->
 <h2>Gift Cards Table</h2>
+<?php 
+if (isset($outputmessage)) {
+    // output message
+    echo $outputmessage;
+}
+?>
 <table>
     <tr>
         <th>ID</th>
@@ -24,8 +30,8 @@
             <td><?php echo $giftcard->getPhone(); ?></td>
             <td><?php echo $giftcard->getMessage(); ?></td>
             <td><?php echo $giftcard->getAmount(); ?></td>
-            <td><form action="." method="post"
-                      id="delete_giftcard_form">
+            <td><form action="gift-cards-admin.php" method="post"
+                      id="delete_giftcard_form" onsubmit="return confirm('Are you sure you want to delete this record?');">
                     <input type="hidden" name="action"
                            value="delete_giftcard" />
                     <input type="hidden" name="giftcard_id"
@@ -35,4 +41,5 @@
         </tr>
     <?php endforeach; ?>
 </table>
+<br />
 <p><a href="?action=show_add_form">Add Gift Card</a></p>

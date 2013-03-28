@@ -9,6 +9,7 @@ $title = "ShopRight Admin - Gift Cards";
 // track user session
 $user = "admin";
 
+ob_start();
 
 include('includes/header.php');
 include('includes/nav.php');
@@ -31,7 +32,7 @@ if (isset($_POST['action'])) {
 
             // Display the gift cards list
             include('functions/gift-cards/gift-cards-list.php');
-        } 
+        }
         // if user clicks on delete
         else if ($action == 'delete_giftcard') {
             // Get the gift card ID
@@ -40,10 +41,13 @@ if (isset($_POST['action'])) {
             // Delete the gift card
             GiftCardDB::deleteGiftCard($giftcard_id);
             
-            header("Location: gift-cards.admin.php");
-        } else {
-             header("Location: gift-cards.admin.php");
+            // set output message - DOES NOT WORK
+            $outputmessage = "Gift Card Deleted";
+
+            header("Location: gift-cards-admin.php");
         }
+
+        ob_end_flush();
         ?>
     </div>
     <!-- /single-content -->

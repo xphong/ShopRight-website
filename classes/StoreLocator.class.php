@@ -66,7 +66,7 @@ class StoreLocator {
     }
 
     public function setPhone($value) {
-        $this->phonenumber = $value;
+        $this->phone = $value;
     }
     
        

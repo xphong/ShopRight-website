@@ -90,11 +90,13 @@ html, body {
 }
 
 h1 {
+    font-family: 'BebasNeueRegular';
     font-size: 48px;
     margin: 10px;
 }
 
 h2 {
+    font-family: 'BebasNeueRegular';
     font-size: 32px;
     margin: 5px;
 }
@@ -302,16 +304,6 @@ nav ul li:hover a {
     float: right;
 }
 
-#gift-cards {
-    width: 400px;
-}
-#gift-cards input, textarea, select {
-    width: 100%;
-    clear: both;
-    resize: none;
-    margin-bottom: 10px;
-}
-
 #sidebar {
     width: 280px;
     float: left;
@@ -431,4 +423,18 @@ footer {
     color:#48A41C; 
     font-weight:bold;
     text-align:center;
+}
+
+#gift-cards {
+    width: 400px;
+}
+#gift-cards input, textarea, select {
+    width: 100%;
+    clear: both;
+    resize: none;
+    margin-bottom: 10px;
+}
+
+#recipes {
+    width: 600px;
 }

@@ -65,9 +65,11 @@ img {
     }
     #main-content {
         width: 95%;
+        margin-right: 15px;
     }
     #single-content {
         width: 95%;
+        margin-right: 15px;
     }
 
     #slider {
@@ -107,6 +109,7 @@ img {
     #content{
         margin-top: 20px;
         margin-left: 10px;
+        margin-right: 10px;
     }
 
     #slider {
@@ -117,7 +120,9 @@ img {
     #single-content {
         width:95%;
     }
-   
+    .content{
+        margin-right: 30px;
+    }
 
 }
 /* Mobile */
@@ -148,6 +153,11 @@ img {
     #single-content {
         width:95%;
     }
+
+    .content{
+        margin-right: 30px;
+    }
+
     /* need to fix*/
     #gift-cards input, textarea, select{
         width:90%;

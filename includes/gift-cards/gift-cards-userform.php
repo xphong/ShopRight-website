@@ -1,49 +1,66 @@
 <!---------------Gift Cards User Form--------------->
 <h2>Gift Cards - User Form </h2>
 <div id="gift-cards">
-        <?php
-        if ($_POST) {
-            /* receive from database
-              $name = $_POST["name"];
-              $email = $_POST["email"];
+    <?php
+    if ($_POST) {
+        /* receive from database
+          $name = $_POST["name"];
+          $email = $_POST["email"];
 
-              $address = $_POST["address"];
-              $postalcode = $_POST["postalcode"];
-              $phonenumber = $_POST["phonenumber"];
-             */
-            // receive from form
-            $rname = $_POST["rname"];
-            $message = $_POST["message"];
-            $amount = $_POST["amount"];
+          $address = $_POST["address"];
+          $postalcode = $_POST["postalcode"];
+          $phonenumber = $_POST["phonenumber"];
+         */
+        // receive from form
+        $rname = $_POST["rname"];
+        $message = $_POST["message"];
+        $amount = $_POST["amount"];
 
-            // errors array: stores all error messages
-            $errors = array();
+        // errors array: stores all error messages
+        $errors = array();
 
-            // validation
-            if ((isset($name) && !empty($name)) && (isset($email) && !empty($email)) && (isset($rname) && !empty($rname))
-                    && (isset($address) && !empty($address)) && (isset($postalcode) && !empty($postalcode))
-                    && (isset($phonenumber) && !empty($phonenumber))) {
+        // validation
+        if ((isset($name) && !empty($name)) && (isset($email) && !empty($email)) && (isset($rname) && !empty($rname))
+                && (isset($address) && !empty($address)) && (isset($postalcode) && !empty($postalcode))
+                && (isset($phonenumber) && !empty($phonenumber))) {
 
-                echo "<div class=\"errorbox\">";
-                foreach ($errors As $err) {
-                    echo "$err<br />";
-                }
-                echo "</div><br />";
-                // if there are no validatione errors, insert into table
-                if (empty($errors)) {
-                    $giftcard = new GiftCard($name, $email, $rname, $address, $postalcode, $phonenumber, $message, $amount);
-                    GiftCardDB::addGiftCard($giftcard);
-                    // email function here
-
-                    header("Location: gift-cards-confirmation.php");
-                }
-            } else {
-                echo "<div class=\"errorbox\">Please fill in all fields.</div><br />";
+            echo "<div class=\"errorbox\">";
+            foreach ($errors As $err) {
+                echo "$err<br />";
             }
+            echo "</div><br />";
+            // if there are no validatione errors, insert into table
+            if (empty($errors)) {
+                $giftcard = new GiftCard($name, $email, $rname, $address, $postalcode, $phonenumber, $message, $amount);
+                GiftCardDB::addGiftCard($giftcard);
+
+                // email function
+                $msg = "E-MAIL SENT FROM http://www.shopright.eu.pn";
+                $msg .= "Confirmation for gift card purchase: \n\n";
+                $msg .= "Your name: $name\n";
+                $msg .= "Recipient Name: $rname\n";
+                $msg .= "Address: $address\n";
+                $msg .= "Postal Code: $postalcode\n";
+                $msg .= "Phone Number: $phonenumber\n";
+                $msg .= "Message: $message\n";
+                $msg .= "Amount: $amount\n\n";
+
+                $to = $email; //send the email to this address can change to $sender_email
+                $subject = "Gift Card Confirmation";
+                $mailheaders = "From: shopright@shopright.eu.pn \n";
+                $mailheaders .= "Reply-to: shopright@shopright.eu.pn\n\n";
+
+                mail($to, $subject, $msg, $mailheaders);
+
+                header("Location: gift-cards-confirmation.php");
+            }
+        } else {
+            echo "<div class=\"errorbox\">Please fill in all fields.</div><br />";
         }
-        ?>
-    
-        <form method="post" action="gift-cards.php">
+    }
+    ?>
+
+    <form method="post" action="gift-cards.php">
         <label>Recipient name:</label>
         <input name="rname" type="Text" placeholder="Recipient name here" value="<?php echo isset($_POST['rname']) ? $_POST['rname'] : ''; ?>" />
         <label>Message:</label>

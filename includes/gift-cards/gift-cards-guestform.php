@@ -57,13 +57,29 @@
             echo "</div><br />";
             // if there are no validation errors, insert into table
             if (empty($errors)) {
-             
+
                 $giftcard = new GiftCard($name, $email, $rname, $address, $postalcode, $phonenumber, $message, $amount);
                 GiftCardDB::addGiftCard($giftcard);
-                // email function here
                 
-                header("Location: gift-cards-confirmation.php");
+                // email function
+                $msg = "E-MAIL SENT FROM http://www.shopright.eu.pn";
+                $msg .= "Confirmation for gift card purchase: \n\n";
+                $msg .= "Your name: $name\n";
+                $msg .= "Recipient Name: $rname\n";
+                $msg .= "Address: $address\n";
+                $msg .= "Postal Code: $postalcode\n";
+                $msg .= "Phone Number: $phonenumber\n";
+                $msg .= "Message: $message\n";
+                $msg .= "Amount: $amount\n\n";
 
+                $to = $email; //send the email to this address can change to $sender_email
+                $subject = "Gift Card Confirmation";
+                $mailheaders = "From: shopright@shopright.eu.pn \n";
+                $mailheaders .= "Reply-to: shopright@shopright.eu.pn\n\n";
+
+                mail($to, $subject, $msg, $mailheaders);
+
+                header("Location: gift-cards-confirmation.php");
             }
         } else {
             echo "<div class=\"errorbox\">Please fill in all fields.</div><br />";

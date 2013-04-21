@@ -26,4 +26,5 @@
         </select>
         <input type="submit" value="Update" />
     </form><!-- /form -->
+    <input type="button" onclick="window.location.href='gift-cards-admin.php'" value="Cancel" />
 </div>

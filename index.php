@@ -17,7 +17,7 @@ include('includes/slider.php');
                 <h2><a href="single.php">Great Deals Daily! (IMAGE SLIDER WILL REPLACE THE LOREM IPSUM MESSAGE)</a></h2>
             </div>
             <div class="content">
-                <img src="images/port1.jpg" alt="img1" />
+                <img src="images/grapes.jpg" alt="img1" />
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam viverra convallis auctor. Sed accumsan libero quis mi commodo et suscipit enim lacinia. Morbi rutrum vulputate est sed faucibus. Nulla sed nisl mauris, id tristique tortor. Sed iaculis dapibus urna nec dictum. Proin non enim odio. Proin vitae turpis libero, eget feugiat enim. Sed fringilla facilisis convallis.</p>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam viverra convallis auctor. Sed accumsan libero quis mi commodo et suscipit enim lacinia. Morbi rutrum vulputate est sed faucibus. Nulla sed nisl mauris, id tristique tortor. Sed iaculis dapibus urna nec dictum. Proin non enim odio.</p>
             </div>
@@ -28,7 +28,7 @@ include('includes/slider.php');
                 <h2><a href="single.php"> Some products will be displayed here </a></h2>
             </div>
             <div class="content">
-                <img src="images/port2.jpg" alt="img2" />
+                <img src="images/peaches.jpg" alt="img2" />
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam viverra convallis auctor. Sed accumsan libero quis mi commodo et suscipit enim lacinia. Morbi rutrum vulputate est sed faucibus. Nulla sed nisl mauris, id tristique tortor. Sed iaculis dapibus urna nec dictum. Proin non enim odio. Proin vitae turpis libero, eget feugiat enim. Sed fringilla facilisis convallis.</p>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam viverra convallis auctor. Sed accumsan libero quis mi commodo et suscipit enim lacinia. Morbi rutrum vulputate est sed faucibus. Nulla sed nisl mauris, id tristique tortor. Sed iaculis dapibus urna nec dictum. Proin non enim odio.</p>
             </div>

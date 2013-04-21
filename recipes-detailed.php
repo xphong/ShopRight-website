@@ -4,7 +4,7 @@ require('classes/recipe.class.php');
 require('classes/recipe_db.class.php');
 
 // page title
-$title = "ShopRight - Recipes";
+$title = "ShopRight - Recipe Page";
 
 // track user session
 $user = "guest";
@@ -15,26 +15,16 @@ include('includes/nav.php');
 
 <section id="content">
     <div id="main-content">
-        <h2>Recipes</h2>
+        <h2>Recipe Page</h2>
         <div id="recipes">
             asdasdasdasdasd asdasdasdasdasd asdasdasdasdasd asdasdasdasdasd asdasdasdasdasd
         </div>
-
     </div>
     <!-- /main-content -->
     <div id="sidebar">
         <section>
-            <div class="heading">
-                <h2> Top Recipes </h2>
-            </div>
-            <div class="content"> 
-                <ul>
-                    <li>Test</li>
-                    <li>Test</li>
-                    <li>Test</li>
-                    <li>Test</li>
-                    <li>Test</li>
-                </ul>
+            <div class="content">
+                <img src="images/grapes.jpg" alt="img1" />
             </div>
         </section>
         <!-- /sidebar section -->

@@ -27,7 +27,7 @@ class GiftCardDB {
     // Get gift card by ID
     public static function getGiftCardByID($giftcard_id) {
         $db = Database::getDB();
-        $query = "SELECT * FROM giftcards WHERE ID = '$giftcard_id'";
+        $query = "SELECT * FROM giftcards WHERE id = '$giftcard_id'";
         $result = $db->query($query);
         $row = $result->fetch();
         $giftcard = new GiftCard($row['name'],

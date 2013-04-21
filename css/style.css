@@ -438,3 +438,10 @@ footer {
 #recipes {
     width: 600px;
 }
+
+#recipes input, textarea, select {
+    width: 100%;
+    clear: both;
+    resize: none;
+    margin-bottom: 10px;
+}

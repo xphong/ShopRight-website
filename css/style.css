@@ -425,6 +425,16 @@ footer {
     text-align:center;
 }
 
+#admin-nav {
+    width: 100%;
+    margin: 0 auto;
+    position: fixed;
+    height: 20px;
+    background: black;
+    color: white;
+    z-index: 444;
+}
+
 #gift-cards {
     width: 400px;
 }

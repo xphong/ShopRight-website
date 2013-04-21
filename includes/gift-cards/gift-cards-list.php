@@ -1,7 +1,7 @@
 <!---------------Gift Cards List--------------->
 <h2>Gift Cards Table</h2>
 <br />
-<p><a href="?action=show_add_form">Add Gift Card</a></p>
+<p><input type="button" onclick="window.location.href='?action=show_add_form'" value="Add Gift Card" />&nbsp;<a href="../gift-cards.php" target="_blank">View Page</a></p>
 <br />
 <?php
 if (isset($_GET['msg'])){

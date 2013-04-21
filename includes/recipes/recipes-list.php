@@ -3,7 +3,8 @@
 <br />
 <p>Instructions, and ingredients are excluded from view because of length.</p>
 <br />
-<p><a href="?action=show_add_form">Add Recipe</a></p>
+<p>  <input type="button" onclick="window.location.href='?action=show_add_form'" value="Add Recipe" />&nbsp;<a href="../recipes.php" target="_blank">View Page</a>
+</p>
 <br />
 <?php
 if (isset($_GET['msg'])){

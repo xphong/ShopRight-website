@@ -492,6 +492,26 @@ footer {
     margin-bottom: 30px;
 }
 
+#recipes-search img {
+    width: 100px;
+    height: 100px;
+    padding: 5px;
+    border: 1px solid #CCC;
+    margin-bottom: 10px;
+}
+
+#recipes-search a:hover {
+    color: #7BBA55;
+}
+
+#recipes-search li {
+    margin-top: 20px;
+}
+
+#recipes-search p{
+    margin-bottom: 15px;
+}
+
 #tabs a:hover {
     color: #7BBA55;
 }

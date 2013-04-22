@@ -83,6 +83,69 @@ class RecipeDB {
         }
         return $recipes;
     }
+    
+    // Get recipes by name
+    public static function getRecipesByName($name) {
+        $db = Database::getDB();
+        $query = "SELECT * FROM recipes WHERE recipe_name LIKE '%$name%'";
+        $result = $db->query($query);
+        $recipes = array();
+        foreach ($result as $row) {
+            $recipe = new Recipe($row['recipe_name'],
+                            $row['type'],
+                            $row['ingredients'],
+                            $row['servings'],
+                            $row['calories'],
+                            $row['prep_time'],
+                            $row['instructions'],
+                            $row['image']);
+            $recipe->setId($row['id']);
+            $recipes[] = $recipe;
+        }
+        return $recipes;
+    }
+    
+    // Get recipes by servings
+    public static function getRecipesByServings($servings) {
+        $db = Database::getDB();
+        $query = "SELECT * FROM recipes WHERE servings = '$servings'";
+        $result = $db->query($query);
+        $recipes = array();
+        foreach ($result as $row) {
+            $recipe = new Recipe($row['recipe_name'],
+                            $row['type'],
+                            $row['ingredients'],
+                            $row['servings'],
+                            $row['calories'],
+                            $row['prep_time'],
+                            $row['instructions'],
+                            $row['image']);
+            $recipe->setId($row['id']);
+            $recipes[] = $recipe;
+        }
+        return $recipes;
+    }
+    
+    // Get recipes by calories
+    public static function getRecipesByCalories($calories) {
+        $db = Database::getDB();
+        $query = "SELECT * FROM recipes WHERE calories <= '$calories'";
+        $result = $db->query($query);
+        $recipes = array();
+        foreach ($result as $row) {
+            $recipe = new Recipe($row['recipe_name'],
+                            $row['type'],
+                            $row['ingredients'],
+                            $row['servings'],
+                            $row['calories'],
+                            $row['prep_time'],
+                            $row['instructions'],
+                            $row['image']);
+            $recipe->setId($row['id']);
+            $recipes[] = $recipe;
+        }
+        return $recipes;
+    }
 
     // Insert recipe into the database table
     public static function addRecipe($recipe) {

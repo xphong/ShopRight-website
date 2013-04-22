@@ -33,7 +33,7 @@ if (isset($_GET['search'])) {
                     <select name="type" >
                         <option value="name">Recipe Name</option>
                         <option value="servings">Servings</option>
-                        <option value="calories">Calories</option>
+                        <option value="calories">Maximum Calories</option>
                     </select>
                     <br />
                     <input type="submit" value="Search" />

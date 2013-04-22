@@ -2,7 +2,7 @@
 <div class="header-wrapper">
     <nav>
         <ul class="menu">
-            <li><a href="index-admin.php" title="Flyer">Home</a></li>
+            <li><a href="index.php" title="Flyer">Home</a></li>
             <li><a href="flyer-admin.php" title="Flyer">Flyer</a></li>
             <li><a href="locator-admin.php" title="Store Locator">Store Locator</a></li>
             <li><a href="recipes-admin.php" title="Recipes">Recipes</a></li>
@@ -14,7 +14,7 @@
         <div class="minimenu">
             <div>MENU</div>
             <select onchange="location=this.value">
-                <option value="index-admin.php">Home</option>
+                <option value="index.php">Home</option>
                 <option value="flyer-admin.php">Flyer</option>
                 <option value="locator-admin.php">Store Locator</option>
                 <option value="recipes-admin.php">Recipes</option>

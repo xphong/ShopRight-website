@@ -16,9 +16,7 @@ foreach ($recipes as $recipe) {
     $calories = $recipe->getCalories();
     $prep_time = $recipe->getPrepTime();
 
-    // output recipe details
-    echo "
-    <ul>
+    $results = "
     <li>
     <a href='recipes-detailed.php?id=$id'><img src='$image' /></a>
     <p>
@@ -32,9 +30,10 @@ foreach ($recipes as $recipe) {
     </p>
     <hr />
     </li>
-    
-    </ul>
     ";
+    
+    // output recipe details
+    echo $results;
 }
 
 echo "</ul>";

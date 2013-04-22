@@ -1,13 +1,17 @@
 <!---------------Add Recipe--------------->
 <h2>Add Recipe</h2>
-<div id="recipes">
+<div id="recipes-admin">
      <form action="recipes-admin.php" method="post" id="add_recipe_form">
         <input type="hidden" name="action" value="add_recipe" />
         <!--isset is used to hold values after validation errors-->
         <label>Recipe Name:</label>
         <input name="recipe_name" type="Text" placeholder="Name of Recipe" value="<?php echo isset($_POST['recipe_name']) ? $_POST['recipe_name'] : ''; ?>" />
         <label>Type:</label>
-        <input name="type" type="Text" placeholder="Breakfast/Lunch/Dinner" value="<?php echo isset($_POST['type']) ? $_POST['type'] : ''; ?>" />
+        <select name="type" >
+            <option value="Breakfast">Breakfast</option>
+            <option value="Lunch">Lunch</option>
+            <option value="Dinner">Dinner</option>
+        </select>
         <label>Ingredients:</label>
         <textarea name="ingredients" cols="50" rows="6" placeholder="List of Ingredients"><?php echo isset($_POST['ingredients']) ? $_POST['ingredients'] : ''; ?></textarea>
         <label>Servings:</label>

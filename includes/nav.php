@@ -2,7 +2,7 @@
 <div class="header-wrapper">
     <nav>
         <ul class="menu">
-            <li><a href="index.php" title="Flyer">Home</a></li>
+            <li><a href="index.php" title="Home">Home</a></li>
             <li><a href="flyer.php" title="Flyer">Flyer</a></li>
             <li><a href="locator.php" title="Store Locator">Store Locator</a></li>
             <li><a href="recipes.php" title="Recipes">Recipes</a></li>

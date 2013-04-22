@@ -11,13 +11,47 @@ $user = "guest";
 
 include('includes/header.php');
 include('includes/nav.php');
+
+// check if user searched anything
+if (isset($_GET['search'])) {
+    $action = "search";
+    $search = $_GET['search'];
+    $type = $_GET['type'];
+} else {
+    $action = "none";
+}
 ?>
 
 <section id="content">
     <div id="main-content">
         <h2>Recipes</h2>
         <div id="recipes">
-            asdasdasdasdasd asdasdasdasdasd asdasdasdasdasd asdasdasdasdasd asdasdasdasdasd
+            <div id="search">
+                <h3>Search Recipes</h3>
+                <form method="get" action="recipes.php">
+                    <input name="search" type="Text" placeholder="Search keyword(s)" />
+                    <select name="type" >
+                        <option value="name">Recipe Name</option>
+                        <option value="servings">Servings</option>
+                        <option value="calories">Calories</option>
+                    </select>
+                    <br />
+                    <input type="submit" value="Search" />
+                </form><!-- /form -->
+                <br />
+                <a href="recipes.php">View All Recipes</a>
+            </div>
+            <!--/search-->
+
+            <?php
+            // show recipes tab
+            if ($action == "none") {
+                include('includes/recipes/recipes-tabs.php');
+            }
+            else {
+                include('includes/recipes/recipes-search.php');
+            }
+            ?>
         </div>
 
     </div>
@@ -25,16 +59,10 @@ include('includes/nav.php');
     <div id="sidebar">
         <section>
             <div class="heading">
-                <h2> Top Recipes </h2>
+                <h2>Top Recipes</h2>
             </div>
             <div class="content"> 
-                <ul>
-                    <li>Test</li>
-                    <li>Test</li>
-                    <li>Test</li>
-                    <li>Test</li>
-                    <li>Test</li>
-                </ul>
+                <?php include('includes/recipes/recipes-top.php'); ?>
             </div>
         </section>
         <!-- /sidebar section -->
@@ -45,12 +73,6 @@ include('includes/nav.php');
     <!-- /clear --> 
 </section>
 <!-- /content --> 
-
-
-
-
-
-
 
 <?php include('includes/footer.php'); ?>
 <!-- /footer -->

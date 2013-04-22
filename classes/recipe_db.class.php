@@ -24,6 +24,27 @@ class RecipeDB {
         return $recipes;
     }
     
+    // Get list of top recipes
+    public static function getTopRecipes() {
+        $db = Database::getDB();
+        $query = "SELECT * FROM recipes Limit 0,5";
+        $result = $db->query($query);
+        $recipes = array();
+        foreach ($result as $row) {
+            $recipe = new Recipe($row['recipe_name'],
+                            $row['type'],
+                            $row['ingredients'],
+                            $row['servings'],
+                            $row['calories'],
+                            $row['prep_time'],
+                            $row['instructions'],
+                            $row['image']);
+            $recipe->setId($row['id']);
+            $recipes[] = $recipe;
+        }
+        return $recipes;
+    }
+    
     // Get recipe by ID
     public static function getRecipeByID($recipe_id) {
         $db = Database::getDB();
@@ -40,6 +61,27 @@ class RecipeDB {
                             $row['image']);
             $recipe->setId($row['id']);
         return $recipe;
+    }
+    
+    // Get recipes by type
+    public static function getRecipesByType($type) {
+        $db = Database::getDB();
+        $query = "SELECT * FROM recipes WHERE type = '$type'";
+        $result = $db->query($query);
+        $recipes = array();
+        foreach ($result as $row) {
+            $recipe = new Recipe($row['recipe_name'],
+                            $row['type'],
+                            $row['ingredients'],
+                            $row['servings'],
+                            $row['calories'],
+                            $row['prep_time'],
+                            $row['instructions'],
+                            $row['image']);
+            $recipe->setId($row['id']);
+            $recipes[] = $recipe;
+        }
+        return $recipes;
     }
 
     // Insert recipe into the database table

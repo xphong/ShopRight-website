@@ -19,9 +19,12 @@
         <div class="heading">
             <h2> Follow Us </h2>
         </div>
-        <div class="content"> <a href="#"><img
+        <div class="content"> <p><a href="#"><img
                     src="http://cdn1.iconfinder.com/data/icons/inside/PNG/032x032/icontexto-inside-twitter.png" alt="Twitter" /></a> <a href="#"><img
-                    src="http://cdn1.iconfinder.com/data/icons/inside/PNG/032x032/icontexto-inside-facebook.png" alt="Facebook" /></a> </div>
+                    src="http://cdn1.iconfinder.com/data/icons/inside/PNG/032x032/icontexto-inside-facebook.png" alt="Facebook" /></a> 
+            </p>
+            <br /><br />
+        </div>
     </section>
     <!-- /sidebar section -->
     <section>

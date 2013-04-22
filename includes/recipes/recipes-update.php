@@ -1,13 +1,17 @@
 <!---------------Update Recipe--------------->
 <h2>Update Recipe</h2>
-<div id="recipes">
+<div id="recipes-admin">
      <form action="recipes-admin.php" method="post" id="update_recipe_form">
         <input type="hidden" name="action" value="update_recipe" />
         <input type="hidden" name="recipe_id" value="<?php echo $recipe->getID(); ?>" />
         <label>Recipe Name:</label>
         <input name="recipe_name" type="Text" placeholder="Name of Recipe" value="<?php echo $recipe->getRecipeName(); ?>" />
         <label>Type:</label>
-        <input name="type" type="Text" placeholder="Breakfast/Lunch/Dinner" value="<?php echo $recipe->getType(); ?>" />
+        <select name="type" >
+            <option value="Breakfast">Breakfast</option>
+            <option value="Lunch">Lunch</option>
+            <option value="Dinner">Dinner</option>
+        </select>
         <label>Ingredients:</label>
         <textarea name="ingredients" cols="50" rows="6" placeholder="List of Ingredients"><?php echo $recipe->getIngredients(); ?></textarea>
         <label>Servings:</label>

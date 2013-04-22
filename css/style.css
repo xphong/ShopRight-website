@@ -221,7 +221,7 @@ nav ul li a {
     position: relative;
 }
 nav ul li:hover a {
-    color: #7BBA55;
+
 }
 /* Slider */
 #slider {
@@ -335,6 +335,14 @@ nav ul li:hover a {
     border-bottom: 1px solid #E1E1E1;
     padding: 5px;
 }
+
+#sidebar .content img {
+    float: left;
+    padding: 5px;
+    border: 1px solid #CCC;
+    margin: 10px;
+}
+
 #sidebar .content .post {
     margin-bottom: 20px;
 }
@@ -449,9 +457,58 @@ footer {
     width: 600px;
 }
 
-#recipes input, textarea, select {
+#recipes #search {
+    height: 100 px;
+    border: 1px solid black;
+    padding: 15px;
+    margin-bottom: 30px;
+    margin-top: 15px;   
+}
+
+#recipes #search select {
+    width: 200px;
+    height: 25px;
+}
+
+#recipes #search h3{
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+#recipes-admin {
+    width: 600px;
+}
+
+#recipes-admin input, textarea, select {
     width: 100%;
     clear: both;
     resize: none;
     margin-bottom: 10px;
+}
+
+#recipes-search {
+    border: 1px solid black;
+    padding: 15px;
+    margin-bottom: 30px;
+}
+
+#tabs a:hover {
+    color: #7BBA55;
+}
+
+#tabs li {
+    margin-top: 20px;
+}
+
+#tabs img{
+    width: 100px;
+    height: 100px;
+    padding: 5px;
+    border: 1px solid #CCC;
+    margin-bottom: 10px;
+
+}
+
+#tabs p{
+    margin-bottom: 15px;
 }

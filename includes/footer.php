@@ -4,7 +4,6 @@
         <div id="footernav">
             <ul class="menu">
                 <li><a href="gift-cards.php" title="Gift Cards">Gift Cards</a></li>
-                <li><a href="coupons.php" title="Coupons">Coupons</a></li>
                 <li><a href="careers.php" title="Careers">Careers</a></li>
             </ul>
             <!-- /footer menu -->
@@ -12,7 +11,6 @@
                 <div>FOOTER MENU</div>
                 <select onchange="location=this.value">
                     <option value="gift-cards.php">Gift Cards</option>
-                    <option value="coupons.php">Coupons</option>
                     <option value="careers.php">Careers</option>
                 </select>
             </div>

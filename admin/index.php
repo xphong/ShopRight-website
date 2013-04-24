@@ -1,6 +1,10 @@
 <?php
 // page title
 $title = "ShopRight Admin - Home";
+
+//if (!isset($_SESSION['role']) || $_SESSION['role'] != "admin")
+//      header('Location: ../login.php');
+
 include('../includes/header-admin.php');
 include('../includes/nav-admin.php');
 ?>
@@ -27,7 +31,10 @@ include('../includes/nav-admin.php');
                 <h2> Members Login </h2>
             </div>
             <div class="content">
-                <p> Members Login and New customer registration link </p>
+              <?php if (isset($_SESSION['role']) && isset($_SESSION['username'])): ?>
+        Welcome, <?php echo $_SESSION['username']; ?> <a href="logout.php">Logout</a>
+    <?php endif; ?>
+        </div>
             </div>
         </section>
         <!-- /sidebar section -->
@@ -39,7 +46,5 @@ include('../includes/nav-admin.php');
 </section>
 <!-- /content --> 
 
-
 <?php include('../includes/footer-admin.php'); ?>
 <!-- /footer -->
-

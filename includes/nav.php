@@ -1,6 +1,11 @@
 <!--------------Navigation--------------->
 <div class="header-wrapper">
     <nav>
+                <div class="user-identity">        
+    <?php if (isset($_SESSION['role']) && isset($_SESSION['username'])): ?>
+        Welcome, <?php echo $_SESSION['username']; ?> <a href="logout.php">Logout</a>
+    <?php endif; ?>
+    </div>
         <ul class="menu">
             <li><a href="index.php" title="Home">Home</a></li>
             <li><a href="flyer.php" title="Flyer">Flyer</a></li>
@@ -25,5 +30,6 @@
         </div>
         <!-- /mobile menu --> 
     </nav>
+
 </div>
 <!--------------/Navigation---------------> 

@@ -4,16 +4,16 @@
         <div id="footernav">
             <ul class="menu">
                 <li><a href="gift-cards-admin.php" title="Gift Cards">Gift Cards</a></li>
-                <li><a href="coupons-admin.php" title="Coupons">Coupons</a></li>
                 <li><a href="careers-admin.php" title="Careers">Careers</a></li>
+                <li><a href="search-admin.php" title="Careers">Search</a></li>
             </ul>
             <!-- /footer menu -->
             <div class="minimenu">
                 <div>FOOTER MENU</div>
                 <select onchange="location=this.value">
                     <option value="gift-cards-admin.php">Gift Cards</option>
-                    <option value="coupons-admin.php">Coupons</option>
                     <option value="careers-admin.php">Careers</option>
+                    <li><a href="search-admin.php" title="Careers">Search</a></li>
                 </select>
             </div>
             <!-- /footer mobile menu --> 

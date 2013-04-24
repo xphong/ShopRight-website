@@ -172,18 +172,22 @@ header #search {
     width: 208px;
     z-index: 15;
 }
-header .button-search {
+header #search input[type=submit] {
     position: absolute;
-    left: 0px;
     background: url('../images/button-search.png') center center no-repeat;
+    height: 30px;
     width: 28px;
-    height: 24px;
-    border-right: 1px solid #CCCCCC;
     cursor: pointer;
 }
-header #search input {
+
+.search-button {
+    background: white;
+    height: 30px;
+    width: 30px;
+}
+
+header #search input[type=text] {
     background: #FFF;
-    padding: 1px 1px 1px 33px;
     width: 172px;
     height: 21px;
     border: 1px solid #CCCCCC;
@@ -221,8 +225,8 @@ nav ul li a {
     position: relative;
 }
 nav ul li:hover a {
-
 }
+
 /* Slider */
 #slider {
     clear: both;
@@ -438,7 +442,7 @@ footer {
     margin: 0 auto;
     position: fixed;
     height: 20px;
-    background: black;
+    background: #5d5d5d;
     color: white;
     z-index: 444;
 }
@@ -526,7 +530,6 @@ footer {
     padding: 5px;
     border: 1px solid #CCC;
     margin-bottom: 10px;
-
 }
 
 #tabs p{

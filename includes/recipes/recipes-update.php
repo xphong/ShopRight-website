@@ -1,7 +1,7 @@
 <!---------------Update Recipe--------------->
 <h2>Update Recipe</h2>
 <div id="recipes-admin">
-     <form action="recipes-admin.php" method="post" id="update_recipe_form">
+     <form enctype="multipart/form-data" action="recipes-admin.php" method="post" id="update_recipe_form">
         <input type="hidden" name="action" value="update_recipe" />
         <input type="hidden" name="recipe_id" value="<?php echo $recipe->getID(); ?>" />
         <label>Recipe Name:</label>
@@ -22,8 +22,11 @@
         <input name="prep_time" type="Text" placeholder="Preparation time" value="<?php echo $recipe->getPrepTime(); ?>" />
         <label>Instructions:</label>
         <textarea name="instructions" cols="50" rows="6" placeholder="Instructions"><?php echo $recipe->getInstructions(); ?></textarea>
-        <br /><label>Image:</label>
-        <input name="image" type="Text" placeholder="Image URL" value="<?php echo $recipe->getImage(); ?>" />
+        <br />
+        <input type="hidden" name="oldimage"
+                           value="<?php echo $recipe->getImage(); ?>" />
+        <label>Image:</label>
+        <input type="file" name="image" /> 
         <input type="submit" value="Update" />
     </form><!-- /form -->
     <input type="button" onclick="window.location.href='recipes-admin.php'" value="Cancel" />

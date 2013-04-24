@@ -21,6 +21,7 @@
         <link rel="stylesheet" href="../css/responsive.css">
         <link rel="stylesheet" href="../css/flexslider.css" type="text/css">
         <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+        <link rel="stylesheet" href="css/extra.css">
             
         <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
         <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
@@ -31,9 +32,9 @@
             });
             $(document).ready(function(){
                 $('.menu li a').hover(function(){
-                    $(this).stop().animate({ color: '#7BBA55'}, 300);
+                    $(this).stop().animate({ color: '#7BBA55'}, 200);
                 }, function() {
-                    $(this).stop().animate({ color: '#000000'}, 300); //original color
+                    $(this).stop().animate({ color: '#000000'}, 200); //original color
                 });
             });
         </script>

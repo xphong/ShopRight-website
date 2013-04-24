@@ -8,7 +8,6 @@
             <li><a href="recipes-admin.php" title="Recipes">Recipes</a></li>
             <li><a href="events-admin.php" title="Events">Events</a></li>
             <li><a href="about-admin.php" title="About"> About</a></li>
-            <li><a href="contact-admin.php" title="Contact">Contact</a></li>
         </ul>
         <!-- /menu -->
         <div class="minimenu">
@@ -20,10 +19,14 @@
                 <option value="recipes-admin.php">Recipes</option>
                 <option value="events-admin.php">Events</option>
                 <option value="about-admin.php">About</option>
-                <option value="contact-admin.php">Contact</option>
             </select>
         </div>
         <!-- /mobile menu --> 
     </nav>
+               <div class="user-identity">        
+    <?php if (isset($_SESSION['role']) && isset($_SESSION['username'])): ?>
+        Welcome, <?php echo $_SESSION['username']; ?> <a href="logout.php">Logout</a>
+    <?php endif; ?>
+    </div>
 </div>
 <!--------------/Navigation---------------> 

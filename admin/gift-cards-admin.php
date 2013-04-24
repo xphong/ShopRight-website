@@ -181,7 +181,7 @@ if (isset($_POST['action'])) {
 
                     $giftcard = new GiftCard($name, $email, $rname, $address, $postalcode, $phonenumber, $message, $amount);
                     GiftCardDB::addGiftCard($giftcard);
-
+                    
                     header("Location: gift-cards-admin.php?msg=Added");
                 }
             } else {

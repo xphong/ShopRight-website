@@ -1,7 +1,7 @@
 <!---------------Add Recipe--------------->
 <h2>Add Recipe</h2>
 <div id="recipes-admin">
-     <form action="recipes-admin.php" method="post" id="add_recipe_form">
+     <form enctype="multipart/form-data" action="recipes-admin.php" method="post" id="add_recipe_form">
         <input type="hidden" name="action" value="add_recipe" />
         <!--isset is used to hold values after validation errors-->
         <label>Recipe Name:</label>
@@ -23,7 +23,7 @@
         <label>Instructions:</label>
         <textarea name="instructions" cols="50" rows="6" placeholder="Instructions"><?php echo isset($_POST['instructions']) ? $_POST['instructions'] : ''; ?></textarea>
         <br /><label>Image:</label>
-        <input name="image" type="Text" placeholder="Image URL" value="<?php echo isset($_POST['image']) ? $_POST['image'] : ''; ?>" />
+        <input type="file" name="image" />     
         <input type="submit" value="Add" />
     </form><!-- /form -->
     <input type="button" onclick="window.location.href='recipes-admin.php'" value="Cancel" />

@@ -21,7 +21,8 @@
         <link rel="stylesheet" href="css/responsive.css">
         <link rel="stylesheet" href="css/flexslider.css" type="text/css">
         <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
-            
+        <link rel="stylesheet" href="css/extra.css">
+
         <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
         <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
         <script src="js/jquery.flexslider.js"></script>
@@ -32,9 +33,9 @@
             
             $(document).ready(function(){
                 $('.menu li a').hover(function(){
-                    $(this).stop().animate({ color: '#7BBA55'}, 300);
+                    $(this).stop().animate({ color: '#7BBA55'}, 200);
                 }, function() {
-                    $(this).stop().animate({ color: '#000000'}, 300); //original color
+                    $(this).stop().animate({ color: '#000000'}, 200); //original color
                 });
             });
         </script>
@@ -57,8 +58,10 @@
             <header>
                 <div id="logo"><a href="index.php"><img src="images/logo.png" alt="ShopRight" /></a></div>
                 <div id="search">
-                    <div class="button-search"></div>
-                    <input type="text" value="Search..." onfocus="if (this.value == &#39;Search...&#39;) {this.value = &#39;&#39;;}" onblur="if (this.value == &#39;&#39;) {this.value = &#39;Search...&#39;;}">
+                    <form method="get" action="search.php">
+                        <input name="search" type="Text" placeholder="Search keyword(s)" />
+                        <span class="search-button"><input type="submit" value=""/></span>
+                    </form><!-- /form -->                
                 </div>
             </header>
         </div>

@@ -48,6 +48,8 @@ if (isset($_GET['msg'])){
                            value="delete_recipe" />
                     <input type="hidden" name="recipe_id"
                            value="<?php echo $recipe->getID(); ?>" />
+                    <input type="hidden" name="image"
+                           value="<?php echo $recipe->getImage(); ?>" />
                     <input type="submit" value="Delete" />
                 </form></td>
 

@@ -4,7 +4,9 @@
             <h2> Members Login </h2>
         </div>
         <div class="content">
-            <p> Members Login and New customer registration link </p>
+            <p> <a class="reg" href="login.php">Member Login</a><br /><br />
+            Not a Registered User?<br /><a href="register.php" class="reg">Click Here</a> To Register with the store.
+            </p>
         </div>
     </section>
     <!-- /sidebar section -->
@@ -27,14 +29,5 @@
         </div>
     </section>
     <!-- /sidebar section -->
-    <section>
-        <div class="heading">
-            <h2> Event Calender </h2>
-        </div>
-        <div class="content">
-            <div class="post"> Event Calender that will display current month and event days in bold </div>
-        </div>
-    </section>
-    <!-- /sidebar section --> 
 </div>
 <!-- /sidebar -->

@@ -23,7 +23,6 @@ if (isset($_POST['action'])) {
 } else {
     $action = 'list_recipes';
 }
-
 ?>
 
 <section id="content">
@@ -40,9 +39,14 @@ if (isset($_POST['action'])) {
         else if ($action == 'delete_recipe') {
             // Get the recipe ID
             $recipe_id = $_POST['recipe_id'];
-
+            // Get recipe image path
+            $image = "../" . $_POST['image'];
+            
             // Delete the recipe
             RecipeDB::deleteRecipe($recipe_id);
+            
+            // Delete image
+            unlink($image);
             
             header("Location: recipes-admin.php?msg=Deleted");
         }
@@ -66,7 +70,7 @@ if (isset($_POST['action'])) {
             $calories = $_POST["calories"];
             $prep_time = $_POST["prep_time"];
             $instructions = $_POST["instructions"];
-            $image = $_POST["image"];
+            $image = "placeholder";
 
             // regular expression patterns
             $number_pattern = "/[0-9]/";
@@ -86,13 +90,73 @@ if (isset($_POST['action'])) {
                 if (preg_match($number_pattern, $type)) {
                     $errors[] = "Please enter type without a number";
                 }
-                
+
                 if (!preg_match($number_pattern, $servings)) {
                     $errors[] = "Please enter servings with a number";
                 }
-                
+
                 if (!preg_match($number_pattern, $calories)) {
                     $errors[] = "Please enter calories with a number";
+                }
+
+                
+                // path to upload images
+                $target_path = "../images/";
+                // file restrictions
+                $exts = array("image/gif", "image/jpeg", "image/jpg", "image/png");
+                
+                //get the variable values in superglobles $_FILES array
+                //path of the file in temp directory
+                $file_temp = $_FILES['image']['tmp_name']; 
+                //original path and file name of the uploaded file
+                $file_name = $_FILES['image']['name']; 
+                //type of file
+                $file_type = $_FILES['image']['type'];
+                //error number
+                $file_error = $_FILES['image']['error']; 
+                
+                // check for general errors
+                if ($file_error > 0) 
+                {
+                    switch ($file_error)
+                    {
+                        case 1: 
+                        $errors[] =  "File exceeded upload_max_filesize."; 
+                        break; 
+                        case 2: 
+                        $errors[] =  "File exceeded max_file_size"; 
+                        break; 
+                        case 3: 
+                        $errors[] =  "File only partially uploaded."; 
+                        break; 
+                        case 4: 
+                        $errors[] =  "No file uploaded."; 
+                        break; 
+                    }
+                }
+                else {   
+                    // check if file is an image
+                    if (in_array($file_type, $exts))
+                    {
+                        // check if file currently exists
+                        if (file_exists($target_path . $file_name)) {
+                            $errors[] = $file_name . " already exists.";
+                        } 
+                        else {
+                            // Get old image path
+                            $oldimage = "../" . $_POST['oldimage'];
+                            // delete old image
+                            unlink($oldimage);
+                            
+                            // upload the file
+                            move_uploaded_file($file_temp, $target_path . $file_name);
+
+                            $image = "images/" . $_FILES["image"]["name"];
+                        }
+                    }
+                    else {
+                        $errors[] = "Wrong file type. Must be an image (jpg, gif, png)";
+                    }
                 }
                 
                 echo "<div class=\"errorbox\">";
@@ -129,8 +193,8 @@ if (isset($_POST['action'])) {
             $calories = $_POST["calories"];
             $prep_time = $_POST["prep_time"];
             $instructions = $_POST["instructions"];
-            $image = $_POST["image"];
-            
+            $image = "placeholder";
+
             // regular expression patterns
             $number_pattern = "/[0-9]/";
 
@@ -149,13 +213,67 @@ if (isset($_POST['action'])) {
                 if (preg_match($number_pattern, $type)) {
                     $errors[] = "Please enter type without a number";
                 }
-                
+
                 if (!preg_match($number_pattern, $servings)) {
                     $errors[] = "Please enter servings with a number";
                 }
-                
+
                 if (!preg_match($number_pattern, $calories)) {
                     $errors[] = "Please enter calories with a number";
+                }
+                
+                // path to upload images
+                $target_path = "../images/";
+                // file restrictions
+                $exts = array("image/gif", "image/jpeg", "image/jpg", "image/png");
+                
+                //get the variable values in superglobles $_FILES array
+                //path of the file in temp directory
+                $file_temp = $_FILES['image']['tmp_name']; 
+                //original path and file name of the uploaded file
+                $file_name = $_FILES['image']['name']; 
+                //type of file
+                $file_type = $_FILES['image']['type'];
+                //error number
+                $file_error = $_FILES['image']['error']; 
+                
+                // check for general errors
+                if ($file_error > 0) 
+                {
+                    switch ($file_error)
+                    {
+                        case 1: 
+                        $errors[] =  "File exceeded upload_max_filesize."; 
+                        break; 
+                        case 2: 
+                        $errors[] =  "File exceeded max_file_size"; 
+                        break; 
+                        case 3: 
+                        $errors[] =  "File only partially uploaded."; 
+                        break; 
+                        case 4: 
+                        $errors[] =  "No file uploaded."; 
+                        break; 
+                    }
+                }
+                else {   
+                    // check if file is an image
+                    if (in_array($file_type, $exts))
+                    {
+                        // check if file currently exists
+                        if (file_exists($target_path . $file_name)) {
+                            $errors[] = $file_name . " already exists.";
+                        } 
+                        else {
+                            // upload the file
+                            move_uploaded_file($file_temp, $target_path . $file_name);
+
+                            $image = "images/" . $_FILES["image"]["name"];
+                        }
+                    }
+                    else {
+                        $errors[] = "Wrong file type. Must be an image (jpg, gif, png)";
+                    }
                 }
                 
                 echo "<div class=\"errorbox\">";

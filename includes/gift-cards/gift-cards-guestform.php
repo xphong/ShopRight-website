@@ -62,7 +62,7 @@
                 GiftCardDB::addGiftCard($giftcard);
                 
                 // email function
-                $msg = "E-MAIL SENT FROM http://www.shopright.eu.pn";
+                $msg = "E-MAIL SENT FROM http://shopright.phonghuynh.ca ";
                 $msg .= "Confirmation for gift card purchase: \n\n";
                 $msg .= "Your name: $name\n";
                 $msg .= "Recipient Name: $rname\n";
@@ -74,8 +74,8 @@
 
                 $to = $email; //send the email to this address can change to $sender_email
                 $subject = "Gift Card Confirmation";
-                $mailheaders = "From: shopright@shopright.eu.pn \n";
-                $mailheaders .= "Reply-to: shopright@shopright.eu.pn\n\n";
+                $mailheaders = "From: shopright@shopright.phonghuynh.ca \n";
+                $mailheaders .= "Reply-to: shopright@shopright.phonghuynh.ca \n\n";
 
                 mail($to, $subject, $msg, $mailheaders);
 

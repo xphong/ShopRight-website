@@ -1,6 +1,6 @@
 <?php
 
-// Store Locator Class: used to create Store Lcator objects
+// Store Locator Class: used to create Store Locator objects
 class StoreLocator {
     private $id, $name, $address, $lat, $lng, $hours, $phone;
     

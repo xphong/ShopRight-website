@@ -1,31 +1,26 @@
 <!--------------Navigation--------------->
 <div class="header-wrapper">
     <nav>
-                <div class="user-identity">        
-    <?php if (isset($_SESSION['role']) && isset($_SESSION['username'])): ?>
-        Welcome, <?php echo $_SESSION['username']; ?> <a href="logout.php">Logout</a>
-    <?php endif; ?>
-    </div>
         <ul class="menu">
             <li><a href="index.php" title="Home">Home</a></li>
-            <li><a href="flyer.php" title="Flyer">Flyer</a></li>
-            <li><a href="locator.php" title="Store Locator">Store Locator</a></li>
+            <li><a href="flyers.php" title="Flyers">Flyers</a></li>
+            <li><a href="map.php" title="Store Locator">Store Locator</a></li>
             <li><a href="recipes.php" title="Recipes">Recipes</a></li>
-            <li><a href="events.php" title="Events">Events</a></li>
+            <li><a href="gift-cards.php" title="Gift Cards">Gift Cards</a></li>
+            <li><a href="careers.php" title="Careers">Careers</a></li>
             <li><a href="about.php" title="About"> About</a></li>
-            <li><a href="contact.php" title="Contact">Contact</a></li>
         </ul>
         <!-- /menu -->
         <div class="minimenu">
             <div>MENU</div>
             <select onchange="location=this.value">
                 <option value="index.php">Home</option>
-                <option value="flyer.php">Flyer</option>
-                <option value="locator.php">Store Locator</option>
+                <option value="flyers.php">Flyers</option>
+                <option value="map.php">Store Locator</option>
                 <option value="recipes.php">Recipes</option>
-                <option value="events.php">Events</option>
+                <option value="gift-cards.php">Gift Cards</option>
+                <option value="careers.php">Careers</option>
                 <option value="about.php">About</option>
-                <option value="contact.php">Contact</option>
             </select>
         </div>
         <!-- /mobile menu --> 

@@ -9,9 +9,6 @@
                 <li>
                     <img src="images/sliderimg2.jpg" />
                 </li>
-                <li>
-                    <img src="images/sliderimg3.jpg" />
-                </li>
             </ul>
         </div>
     </section><!-- end slider -->

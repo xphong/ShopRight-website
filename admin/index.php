@@ -17,8 +17,12 @@ include('../includes/nav-admin.php');
                 <h2>Welcome to the ShopRight CMS</h2>
             </div>
             <div class="content">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam viverra convallis auctor. Sed accumsan libero quis mi commodo et suscipit enim lacinia. Morbi rutrum vulputate est sed faucibus. Nulla sed nisl mauris, id tristique tortor. Sed iaculis dapibus urna nec dictum. Proin non enim odio. Proin vitae turpis libero, eget feugiat enim. Sed fringilla facilisis convallis.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam viverra convallis auctor. Sed accumsan libero quis mi commodo et suscipit enim lacinia. Morbi rutrum vulputate est sed faucibus. Nulla sed nisl mauris, id tristique tortor. Sed iaculis dapibus urna nec dictum. Proin non enim odio.</p>
+                <p>A website CMS or Content Management System is software that resides on a server and replaces web pages as a means of displaying a website. The pages do not exist and instead are created from a database on-the-fly, by the CMS software. The owner can edit content online without recourse to a webmaster. Additional website functions and features are added by means of plugins, so that custom development is not normally required. Page design is based on templates instead of the free-form method used in normal web pages, and this means that content is separated from design, so that each does not affect the other. This means the site owner can change the content without affecting the page layout, and that design issues are resolved more easily and quickly. 
+                </p><p>
+It is just as easy to create a 1,000-page website as a 10-page site, as the CMS creates the page framework and the content can be pasted in. A new page can be created and go live on the site in under two minutes if the standard page layout is chosen.
+</p><p>
+A website CMS is therefore the best way to run a large website, or indeed any site where regular edits or changes are made; and where additional functions will be needed at a later date. A large or complex site will be far quicker and cheaper to build with a CMS.
+                </p>
             </div>
         </article>
         <!-- /article -->
@@ -28,21 +32,27 @@ include('../includes/nav-admin.php');
     <div id="sidebar">
         <section>
             <div class="heading">
-                <h2> Members Login </h2>
+                <h2>Admin Links</h2>
             </div>
             <div class="content">
-              <?php if (isset($_SESSION['role']) && isset($_SESSION['username'])): ?>
-        Welcome, <?php echo $_SESSION['username']; ?> <a href="logout.php">Logout</a>
-    <?php endif; ?>
-        </div>
+                <ul>
+                    <li><a href="index.php" title="Flyer">Home</a></li>
+                    <li><a href="flyer-admin.php" title="Flyer">Flyer</a></li>
+                    <li><a href="store-locator-admin.php" title="Store Locator">Store Locator</a></li>
+                    <li><a href="recipes-admin.php" title="Recipes">Recipes</a></li>
+                    <li><a href="gift-cards-admin.php" title="Gift Cards">Gift Cards</a></li>
+                    <li><a href="career-admin.php" title="Careers">Careers</a></li>
+                    <li><a href="search-admin.php" title="Careers">Search</a></li>
+                </ul>
             </div>
-        </section>
-        <!-- /sidebar section -->
     </div>
-    <!-- /sidebar -->
+</section>
+<!-- /sidebar section -->
+</div>
+<!-- /sidebar -->
 
-    <div class="clear"></div>
-    <!-- /clear --> 
+<div class="clear"></div>
+<!-- /clear --> 
 </section>
 <!-- /content --> 
 

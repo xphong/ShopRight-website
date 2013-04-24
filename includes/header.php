@@ -21,7 +21,6 @@
         <link rel="stylesheet" href="css/responsive.css">
         <link rel="stylesheet" href="css/flexslider.css" type="text/css">
         <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
-        <link rel="stylesheet" href="css/extra.css">
 
         <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
         <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>

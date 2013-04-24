@@ -15,8 +15,8 @@ class StoreLocatorDB {
                             $row['lat'],
                             $row['lng'],
                             $row['hours'],
-                            $row['phone']);
-                            $storelocator->setId($row['id']);
+                            $row['Phone']);
+                            $storelocator->setID($row['id']);
             $storelocators[] = $storelocator;
         }
         return $storelocators;
@@ -25,7 +25,7 @@ class StoreLocatorDB {
     // Store Locator  by ID
     public static function getStoreLocatorByID($storelocator_id) {
         $db = Database::getDB();
-        $query = "SELECT * FROM markers WHERE id = '$storelocator_id'";
+        $query = "SELECT * FROM markers WHERE ID = '$storelocator_id'";
         $result = $db->query($query);
         $row = $result->fetch();
         $storelocator = new StoreLocator($row['name'],
@@ -33,12 +33,12 @@ class StoreLocatorDB {
                         $row['lat'],
                         $row['lng'],
                         $row['hours'],
-                        $row['phone']);
-        $storelocator->setId($row['id']);
+                        $row['Phone']);
+        $storelocator->setID($row['id']);
         return $storelocator;
     }
 
-    // Insert Store Locator into the database table
+    // Insert Store Location into the database table
     public static function addStoreLocator($storelocator) {
         // get database connection using database class
         $db = Database::getDB();
@@ -52,7 +52,7 @@ class StoreLocatorDB {
 
         // insert
         if ($stmt = $db->prepare("INSERT INTO markers
-                 (name, address, lat, lng, hours, phone)
+                 (name, address, lat, lng, hours, Phone)
              VALUES
                 (:name, :address, :lat , :lng, :hours, :phone)")) {
             $stmt->bindParam(":name", $name, PDO::PARAM_STR);
@@ -97,10 +97,10 @@ class StoreLocatorDB {
 
         // update
         if ($stmt = $db->prepare("UPDATE markers
-                 SET name = :name, address = :address, lat = :lat, lng = :lng, hours = :hours, phone = :phone
+                 SET name = :name, address = :address, lat = :lat, lng = :lng, hours = :hours, Phone = :phone
                  WHERE id = :id")) {
             $stmt->bindParam(":name", $name, PDO::PARAM_STR);
-            $stmt->bindParam(":addres", $address, PDO::PARAM_STR);
+            $stmt->bindParam(":address", $address, PDO::PARAM_STR);
             $stmt->bindParam(":lat", $lat, PDO::PARAM_STR);
             $stmt->bindParam(":lng", $lng, PDO::PARAM_STR);
             $stmt->bindParam(":hours", $hours, PDO::PARAM_STR);

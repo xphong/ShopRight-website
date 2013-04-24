@@ -1,3 +1,35 @@
+<?php
+// page title
+$title = "ShopRight - Flyers";
+     
+require("includes/header.php");
+require("includes/nav.php");
+
+require('classes/database.class.php');
+require('classes/Flyer.class.php');
+require('classes/flyer_db.class.php');
+?>
+
+<section id="content">
+    <div id="main-content">
+        <h2>ShopRight May 2013 Flyers</h2>
+<?php
+        $flyers = FlyerDB::getFlyer();
+        foreach($flyers as $flyer){
+            $id = $flyer->getID();
+            $flyerdate = $flyer->getFlyerDate(); 
+?>
+            <article>
+                <div class="heading">
+                    <h2><a href="flyer.php?id=<?php echo $id;?>"><br><?php echo $flyerdate."<br>";?></a></h2>
+                </div>
+            </article>
+            <br/>
+<?php
+        }
+?>
+    </div>
+
 <div id="sidebar">
     <section>
         <div class="heading">
@@ -8,13 +40,6 @@
             Not a Registered User?<br /><a href="register.php" class="reg">Click Here</a> To Register with the store.
             </p>
         </div>
-    </section>
-    <!-- /sidebar section -->
-    <section>
-        <div class="heading">
-            <h2> Weekly Deals! </h2>
-        </div>
-        <div class="content">Take a look at our <a href="flyers.php" >flyers </a>for weekly savings. </div>
     </section>
     <!-- /sidebar section -->
     <section>
@@ -42,3 +67,9 @@
     <!-- /sidebar section -->
 </div>
 <!-- /sidebar -->
+    <div class="clear"></div>
+</section>
+
+<?php
+require("includes/footer.php");
+?>
